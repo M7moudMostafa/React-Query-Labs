@@ -2,12 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const RQSuperHeroesPage = () => {
-  const { isLoading, data, isError, error } = useQuery({
+  const { isLoading, data, isError, error, isFetching } = useQuery({
     queryKey: ["super-heroes"],
     queryFn: () => {
       return axios.get("http://localhost:4000/superheroes");
     },
+    gcTime: 5000,
   });
+
+  console.log({ isFetching, isLoading });
 
   if (isLoading) return <h2>Loading....</h2>;
 
