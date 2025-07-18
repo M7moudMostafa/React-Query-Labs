@@ -9,8 +9,10 @@ const RQSuperHeroesPage = () => {
     },
     // gcTime: 5000, // Cache time => data removed default 5 minutes
     // staleTime: 30000, // Stale time => default 0 s
-    refetchOnMount: true, // True, false, 'always'
-    refetchOnWindowFocus: "always", // True, false, 'always'
+    // refetchOnMount: true, // True, false, 'always'
+    // refetchOnWindowFocus: "always", // True, false, 'always'
+    // refetchInterval: 2000, // set an integer value in ms. default is ( false )
+    // refetchIntervalInBackground: true, // Will refetch the data when the windows not focused ( in background )
   });
 
   console.log({ isFetching, isLoading });
