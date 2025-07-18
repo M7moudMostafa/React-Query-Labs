@@ -2,7 +2,13 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const RQSuperHeroesPage = () => {
-  const { isLoading, data, isError, error, isFetching } = useQuery({
+  // isLoading => detect data loading or not
+  // data => data returned from request
+  // isError => detect there is an error from request or not
+  // error => error type
+  // isFetching => data is fetching or not
+  // refetch => to refetch the data
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery({
     queryKey: ["super-heroes"],
     queryFn: () => {
       return axios.get("http://localhost:4000/superheroes");
@@ -13,6 +19,7 @@ const RQSuperHeroesPage = () => {
     // refetchOnWindowFocus: "always", // True, false, 'always'
     // refetchInterval: 2000, // set an integer value in ms. default is ( false )
     // refetchIntervalInBackground: true, // Will refetch the data when the windows not focused ( in background )
+    enabled: false, // To enable and disable use Query
   });
 
   console.log({ isFetching, isLoading });
@@ -24,6 +31,7 @@ const RQSuperHeroesPage = () => {
   return (
     <>
       <h1>RQ Super Heroes Page</h1>
+      <button onClick={refetch}>Fetch Heroes</button>
       {data?.data?.map((hero) => (
         <div key={hero.id}>
           {hero.id}: {hero.name}
