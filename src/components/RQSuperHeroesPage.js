@@ -7,7 +7,10 @@ const RQSuperHeroesPage = () => {
     queryFn: () => {
       return axios.get("http://localhost:4000/superheroes");
     },
-    gcTime: 5000,
+    // gcTime: 5000, // Cache time => data removed default 5 minutes
+    // staleTime: 30000, // Stale time => default 0 s
+    refetchOnMount: true, // True, false, 'always'
+    refetchOnWindowFocus: "always", // True, false, 'always'
   });
 
   console.log({ isFetching, isLoading });
