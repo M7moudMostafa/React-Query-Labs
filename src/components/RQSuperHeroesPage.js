@@ -2,6 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const RQSuperHeroesPage = () => {
+  // const onSuccess = () => {
+  //   console.log("Perform side effect after data fetching.");
+  // };
+
+  // const onError = () => {
+  //   console.log("Perform side effect after encountering error.");
+  // };
+
   // isLoading => detect data loading or not
   // data => data returned from request
   // isError => detect there is an error from request or not
@@ -19,7 +27,9 @@ const RQSuperHeroesPage = () => {
     // refetchOnWindowFocus: "always", // True, false, 'always'
     // refetchInterval: 2000, // set an integer value in ms. default is ( false )
     // refetchIntervalInBackground: true, // Will refetch the data when the windows not focused ( in background )
-    enabled: false, // To enable and disable use Query
+    // enabled: false, // To enable and disable use Query
+    // onSuccess: onSuccess, // No Longer use
+    // onError: onError, // No Longer use
   });
 
   console.log({ isFetching, isLoading });
