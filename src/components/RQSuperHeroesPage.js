@@ -30,6 +30,10 @@ const RQSuperHeroesPage = () => {
     // enabled: false, // To enable and disable use Query
     // onSuccess: onSuccess, // No Longer use
     // onError: onError, // No Longer use
+    select: (data) => {
+      const superHeroNames = data.data.map((hero) => hero.name);
+      return superHeroNames;
+    },
   });
 
   console.log({ isFetching, isLoading });
@@ -42,11 +46,14 @@ const RQSuperHeroesPage = () => {
     <>
       <h1>RQ Super Heroes Page</h1>
       <button onClick={refetch}>Fetch Heroes</button>
-      {data?.data?.map((hero) => (
+      {/** {data?.data?.map((hero) => (
         <div key={hero.id}>
           {hero.id}: {hero.name}
         </div>
-      ))}
+      ))} **/}
+      {data.map((heroName) => {
+        return <div key={heroName}>{heroName}</div>;
+      })}
     </>
   );
 };
