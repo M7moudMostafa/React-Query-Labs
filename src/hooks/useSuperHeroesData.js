@@ -14,10 +14,10 @@ const useSuperHeroesData = () => {
     // refetchInterval: 2000, // set an integer value in ms. default is ( false )
     // refetchIntervalInBackground: true, // Will refetch the data when the windows not focused ( in background )
     // enabled: false, // To enable and disable use Query
-    select: (data) => {
-      const superHeroNames = data.data.map((hero) => hero.name);
-      return superHeroNames;
-    },
+    // select: (data) => {
+    //   const superHeroNames = data.data.map((hero) => hero.name);
+    //   return superHeroNames;
+    // },
   });
 };
 
