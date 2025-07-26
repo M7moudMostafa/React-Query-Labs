@@ -6,6 +6,7 @@ import { SuperHeroesPage } from "./components/SuperHeroesPage";
 import RQSuperHeroesPage from "./components/RQSuperHeroesPage";
 import HomePage from "./components/HomePage";
 import { RQSuperHeroPage } from "./components/RQSuperHeroPage";
+import ParallelQueries from "./components/ParallelQueries.page";
 
 function App() {
   const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ function App() {
           <Routes>
             <Route path="/super-heroes" element={<SuperHeroesPage />} />
             <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
+            <Route path="/rq-parallel" element={<ParallelQueries />} />
             <Route
               path="/rq-super-heroes/:heroId"
               element={<RQSuperHeroPage />}
