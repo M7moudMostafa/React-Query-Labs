@@ -7,7 +7,7 @@
     },
     {
       "id": 2,
-      "name": "Superman 555",
+      "name": "Superman",
       "alterEgo": "Clark Kent"
     },
     {
@@ -19,15 +19,61 @@
   "friends": [
     {
       "id": 1,
-      "name": "Mahmoud"
+      "name": "Chandler Bing"
     },
     {
       "id": 2,
-      "name": "Mostafa"
+      "name": "Joey Tribbiani"
     },
     {
       "id": 3,
-      "name": "Attia"
+      "name": "Rachel Green"
+    }
+  ],
+  "users": [
+    {
+      "id": "memo@gmail.com",
+      "channelId": "Jhonny"
+    }
+  ],
+  "channels": [
+    {
+      "id": "Jhonny",
+      "courses": ["react", "vue", "angular"]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "red"
+    },
+    {
+      "id": 2,
+      "label": "blue"
+    },
+    {
+      "id": 3,
+      "label": "green"
+    },
+    {
+      "id": 4,
+      "label": "yellow"
+    },
+    {
+      "id": 5,
+      "label": "black"
+    },
+    {
+      "id": 6,
+      "label": "white"
+    },
+    {
+      "id": 7,
+      "label": "orange"
+    },
+    {
+      "id": 8,
+      "label": "purple"
     }
   ]
 }
