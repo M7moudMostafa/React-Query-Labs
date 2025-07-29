@@ -1,24 +1,31 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const useSuperHeroesData = () => {
+// Fetch Super Heroes
+export const useFetchHeroesData = () => {
   return useQuery({
     queryKey: ["super-heroes"],
     queryFn: () => {
       return axios.get("http://localhost:4000/superheroes");
     },
-    // gcTime: 5000, // Cache time => data removed default 5 minutes
-    // staleTime: 30000, // Stale time => default 0 s
-    // refetchOnMount: true, // True, false, 'always'
-    // refetchOnWindowFocus: "always", // True, false, 'always'
-    // refetchInterval: 2000, // set an integer value in ms. default is ( false )
-    // refetchIntervalInBackground: true, // Will refetch the data when the windows not focused ( in background )
-    // enabled: false, // To enable and disable use Query
-    // select: (data) => {
-    //   const superHeroNames = data.data.map((hero) => hero.name);
-    //   return superHeroNames;
-    // },
+    // Optional configs:
+    // gcTime: 5000,
+    // staleTime: 30000,
+    // refetchOnMount: true,
+    // refetchOnWindowFocus: "always",
+    // refetchInterval: 2000,
+    // refetchIntervalInBackground: true,
+    // enabled: false,
+    // select: (data) => data.data.map((hero) => hero.name),
   });
 };
 
-export default useSuperHeroesData;
+// Add Super Hero
+export const useAddSuperHero = () => {
+  return useMutation({
+    mutationKey: ["add-hero"],
+    mutationFn: (hero) => {
+      return axios.post("http://localhost:4000/superheroes", hero);
+    },
+  });
+};
